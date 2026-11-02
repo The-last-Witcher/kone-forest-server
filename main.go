@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"kone-server/config"
 	"kone-server/routes"
 	"log"
 	"net"
@@ -14,6 +15,9 @@ import (
 
 func main(){
 	godotenv.Load()
+
+	config.DBConfig()
+	defer config.Pool.Close()
 
 	port := os.Getenv("SPORT")
 	listener, err := net.Listen("tcp", port)

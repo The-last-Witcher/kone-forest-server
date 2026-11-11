@@ -26,3 +26,11 @@ type DTO struct {
 	User *User `json:"user"`
 	Chalet []Chalet `json:"chalet"`
 }
+
+type InquiryReq struct{
+	FirstName string `json:"first_name"`
+	LastName string `json:"last_name"`
+	Email string `json:"email"`
+	Topic string `json:"topic"`
+	Message string `json:"message"`
+}

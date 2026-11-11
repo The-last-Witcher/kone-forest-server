@@ -35,7 +35,7 @@ CREATE TABLE Reservation(
 
 	status VARCHAR(20) DEFAULT 'confirmed' NOT NULL,
 
-	 CONSTRAINT fk_reservation_user 
+	CONSTRAINT fk_reservation_user 
         FOREIGN KEY (user_id) 
         REFERENCES Users(id) 
         ON DELETE CASCADE,

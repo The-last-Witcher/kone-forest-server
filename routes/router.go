@@ -17,6 +17,8 @@ func Router() *mux.Router{
 	router.HandleFunc("/about", About)
 	router.HandleFunc("/contacts", Contacts)
 	router.HandleFunc("/account", Account)
+	router.HandleFunc("/chalets", Chalets)
+	router.HandleFunc("/chalets/{id}", CurrentChalet)
 
 	return router
 }

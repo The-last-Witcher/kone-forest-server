@@ -12,6 +12,7 @@ type Chalet struct {
 	Bathrooms uint `json:"bathrooms"`
 	IsActive bool `json:"is_active"`
 	Amenities []string `json:"amenities"`
+	ImageURL string `json:"image_url"`
 }
 
 type User struct {

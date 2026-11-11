@@ -1,19 +1,16 @@
-CREATE TYPE inquiry_type AS ENUM(
+CREATE TYPE inquiry_topics AS ENUM(
 	'booking_question',
-	'adding_question',
+	'adding_chalet',
 	'rescheduling_canceling',
 	'other'
 );
 
-CREATE TABLE chalet_inquiries(
+CREATE TABLE contact_inquiries(
 	id SERIAL PRIMARY KEY,
-	user_id UUID NOT NULL,
-	chalet_id BIGINT,
-	type inquiry_type NOT NULL,
+	first_name VARCHAR(100) NOT NULL,
+	last_name VARCHAR(100) NOT NULL,
+	email VARCHAR(150) NOT NULL,
+	topic inquiry_topics NOT NULL,
 	message TEXT NOT NULL,
-	status VARCHAR(50) DEFAULT 'pending',
-	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
-	CONSTRAINT fk_inquiry_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-	CONSTRAINT fk_inquiry_chalet FOREIGN KEY (chalet_id) REFERENCES chalets(id) ON DELETE CASCADE
-);
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)

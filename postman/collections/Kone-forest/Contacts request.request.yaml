@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://localhost:7777/contacts
+method: POST
+body:
+  type: formdata
+  content: []
+order: 2000
